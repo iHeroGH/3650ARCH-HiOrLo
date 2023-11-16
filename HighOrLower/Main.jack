@@ -1,0 +1,29 @@
+class Main {
+
+    function void main() {
+        var int randomNumber;
+        var int guessed;
+
+        do Random.setSeed(43);
+
+        let randomNumber = Random.randRange(100);
+
+        let guessed = Keyboard.readInt("Enter a number between 0-100: ");
+
+        while (~(guessed = randomNumber)){
+            if (guessed < randomNumber){
+                do Output.printString("Higher!");
+            }
+            if (guessed > randomNumber){
+                do Output.printString("Lower!");
+            }
+            do Output.println();
+
+            let guessed = Keyboard.readInt("Enter a number between 0-100: ");
+        }
+
+        do Output.printString("Got it!");
+
+        return;
+    }
+}
